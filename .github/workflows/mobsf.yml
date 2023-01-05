@@ -69,10 +69,12 @@ jobs:
         with:
           script: |
             import os
+            import warnings
             print("Directory contents:")
             file = open("results.sarif", 'r')
             for i in file:
-              print(i)
+              if i.startswith('"id":') :
+                warnings.warn("There are security issues, please check security section!")
 
       - name: Upload mobsfscan report
         uses: github/codeql-action/upload-sarif@v2
