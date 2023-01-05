@@ -62,7 +62,7 @@ jobs:
       - name: Run mobsfscan
         uses: MobSF/mobsfscan@main
         with:
-          args: . -w --sarif --output results.sarif || true
+          args: . --sarif --output results.sarif --json --output results.json
           
       - name: Run Python Script
         uses: jannekem/run-python-script-action@v1.5
