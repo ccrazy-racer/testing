@@ -83,8 +83,6 @@ jobs:
                 if i.lstrip().startswith('"id":') :
                   warnings.warn("There are security issues, please check security section!")
                   return 1
-                else:
-                  return 0
             get_results()
         
       - name: Verifing results from report!!!
