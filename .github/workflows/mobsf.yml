@@ -63,11 +63,6 @@ jobs:
         uses: MobSF/mobsfscan@main
         with:
           args: . -w --sarif --output results.sarif || true
-
-      - name: Upload mobsfscan report
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: results.sarif
           
       - name: Run Python Script
       - uses: jannekem/run-python-script-action@v1
@@ -77,3 +72,10 @@ jobs:
             print("Directory contents:")
             for f in os.listdir():
                 print(f)
+
+      - name: Upload mobsfscan report
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results.sarif
+          
+      
