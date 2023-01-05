@@ -70,34 +70,10 @@ jobs:
           sarif_file: results.sarif
           
       - name: Run Python Script
-        uses: actions/github-script@v6
-        id: result
-        with:
-          script: return document.getElementById('results.sarif')
-            .addEventListener('change', function() {
-              
-            var fr=new FileReader();
-            fr.onload=function(){
-                document.getElementById('output')
-                        .textContent=fr.result;
-            }
-              
-            fr.readAsText(this.files[0]);
-            })
-
-#             import os
-#             import warnings
-#             def get_results():
-#               file = open("results.sarif", 'r')
-#               for i in file:
-#                 print(i.lstrip())
-#                 if i.lstrip().startswith('"id":') :
-#                   warnings.warn("There are security issues, please check security section!")
-#                   return 1
-#             get_results()
+        run: python ./verifyResults.py
         
-      - name: Verifing results from report!!!
-        run: echo "${{steps.result.outputs.result}}"
+#       - name: Verifing results from report!!!
+#         run: echo "${{steps.result.outputs.result}}"
 #         if: steps.set-result.outputs.result == 1
 #         run: echo "There are security issues, please check security section!"
 #         run: 
