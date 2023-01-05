@@ -71,14 +71,22 @@ jobs:
           
       - name: Run Python Script
         uses: jannekem/run-python-script-action@v1.5
+        id: result
         with:
           script: |
             import os
             import warnings
-            print("Sit tight, checking security issues.")
             file = open("results.sarif", 'r')
             for i in file:
               if i.lstrip().startswith('"id"') :
                 warnings.warn("There are security issues, please check security section!")
-                exit(0)
+                return 1
+              else:
+                return 0
+          result-encoding: int
+        
+      - name: Verifing results from report!!!
+        if: steps.set-result.outputs.result == 1
+        run: echo "There are security issues, please check security section! ${{exit 1}}"
+#         run: 
       
