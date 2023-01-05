@@ -70,7 +70,11 @@ jobs:
           sarif_file: results.sarif
           
       - name: Run Python Script
+        id: get-result
         run: python ./verifyResults.py
+        
+      - name: Get result
+        run: echo "${{ steps.get-result.outputs }}"
         
 #       - name: Verifing results from report!!!
 #         run: echo "${{steps.result.outputs.result}}"
