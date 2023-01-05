@@ -87,7 +87,8 @@ jobs:
             get_results()
         
       - name: Verifing results from report!!!
-        if: steps.set-result.outputs.result == 1
-        run: echo "There are security issues, please check security section!"
+        run: echo "${{steps.result.outputs.result}}"
+#         if: steps.set-result.outputs.result == 1
+#         run: echo "There are security issues, please check security section!"
 #         run: 
       
