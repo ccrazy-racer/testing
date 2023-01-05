@@ -74,7 +74,7 @@ jobs:
         run: python ./verifyResults.py
         
       - name: Get result
-        run: echo "${{ steps.get-result.outputs }}"
+        run: echo "${{ steps.get-result.outputs.result }}"
         
 #       - name: Verifing results from report!!!
 #         run: echo "${{steps.result.outputs.result}}"
