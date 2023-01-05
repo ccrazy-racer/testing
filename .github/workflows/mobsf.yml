@@ -70,10 +70,10 @@ jobs:
           script: |
             import os
             import warnings
-            print("Directory contents:")
+            print("Sit tight, checking security issues.")
             file = open("results.sarif", 'r')
             for i in file:
-              if i.startswith('"id":') :
+              if i.startswith('              "id":') :
                 warnings.warn("There are security issues, please check security section!")
 
       - name: Upload mobsfscan report
