@@ -76,13 +76,15 @@ jobs:
           script: |
             import os
             import warnings
-            file = open("results.sarif", 'r')
-            for i in file:
-              if i.lstrip().startswith('"id"') :
-                warnings.warn("There are security issues, please check security section!")
-                return 1
-              else:
-                return 0
+            def getResults:
+              file = open("results.sarif", 'r')
+              for i in file:
+                if i.lstrip().startswith('"id"') :
+                  warnings.warn("There are security issues, please check security section!")
+                  return 1
+                else:
+                  return 0
+            getResults()
           result-encoding: int
         
       - name: Verifing results from report!!!
