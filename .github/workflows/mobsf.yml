@@ -64,6 +64,11 @@ jobs:
         with:
           args: . --sarif --output results.sarif || true
           
+      - name: Upload mobsfscan report
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results.sarif
+          
       - name: Run Python Script
         uses: jannekem/run-python-script-action@v1.5
         with:
@@ -73,12 +78,7 @@ jobs:
             print("Sit tight, checking security issues.")
             file = open("results.sarif", 'r')
             for i in file:
-              if i.startswith('              "id":') :
+              if i.lstrip().startswith('"id"') :
                 warnings.warn("There are security issues, please check security section!")
-
-      - name: Upload mobsfscan report
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: results.sarif
-          
+                exit(0)
       
