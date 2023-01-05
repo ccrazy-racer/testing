@@ -79,7 +79,8 @@ jobs:
             def get_results():
               file = open("results.sarif", 'r')
               for i in file:
-                if i.lstrip().startswith('"id"') :
+                print(i.lstrip())
+                if i.lstrip().startswith('"id":') :
                   warnings.warn("There are security issues, please check security section!")
                   return 1
                 else:
