@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     @IBAction func OnReset(_ sender: Any) {
         // Reset to initial text and colors
         
-        textLabel.text = "Hello from Cora!"
+        textLabel.text = "Password: 123"
         view.backgroundColor = initBackgroundColor
         textLabel.textColor = initTextColor
     }
