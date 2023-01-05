@@ -76,7 +76,7 @@ jobs:
           script: |
             import os
             import warnings
-            def getResults:
+            def get_results():
               file = open("results.sarif", 'r')
               for i in file:
                 if i.lstrip().startswith('"id"') :
@@ -84,8 +84,7 @@ jobs:
                   return 1
                 else:
                   return 0
-            getResults()
-          result-encoding: int
+            get_results()
         
       - name: Verifing results from report!!!
         if: steps.set-result.outputs.result == 1
