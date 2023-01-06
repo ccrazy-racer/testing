@@ -77,11 +77,14 @@ jobs:
         with:
           sarif_file: ${{ steps.date.outputs.DATE }}.sarif
           
+      - name: Run Python Script
+        run: python ./Security_Reports_Handlers.py
+          
       - name: Commit files # commit the output folder
         run: |
           git config --local user.email "amoghd555@gmail.com"
           git config --local user.name "Amogh"
-          git add ./Security Reports
+          git add ./Security_Reports
           git commit -m "Add Security Report changes"
       - name: Push changes # push the 'Security Report' folder to your repo
         uses: ad-m/github-push-action@master
@@ -90,6 +93,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
           
-      - name: Run Python Script
-        run: python ./verifyResults.py
+      
       
