@@ -67,7 +67,7 @@ jobs:
       - name: Upload mobsfscan report
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: results.sarif
+          sarif_file: $(date +'%Y-%m-%d').sarif
           
       - name: Run Python Script
         run: python ./verifyResults.py
