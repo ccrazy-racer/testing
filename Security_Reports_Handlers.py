@@ -10,7 +10,7 @@ for i in os.listdir():
         file = open(i, 'r')
         break
        
-direc = "Security Reports"
+direc = "Security_Reports"
 
 
 path_direc = os.path.join(direc)
