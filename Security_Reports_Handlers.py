@@ -16,7 +16,7 @@ date = str(date.today())
 path_direc = os.path.join(direc)
 cur_direc = os.path.join(direc, date)
 
-if os.path.exists(path):
+if os.path.exists(path_direc):
     
     # This checks for pervious day unzipped folders, if any then zips that folder.
     list_dirs = os.listdir(path_direc)
