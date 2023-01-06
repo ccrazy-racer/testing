@@ -61,21 +61,21 @@ jobs:
           
       - name: Get current date
         id: date
-        run: echo ${{ github.event.repository.pushed_at}}
+        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
       - name: Test with environment variables
-        run: echo ${{ github.event.repository.pushed_at}}
+        run: echo ${{ steps.date.outputs.DATE }}
         env:
-          TAG_NAME: report-tag-${{ github.event.repository.pushed_at}}
+          TAG_NAME: report-tag-${{ steps.date.outputs.DATE }}
 
       - name: Run mobsfscan
         uses: MobSF/mobsfscan@main
         with:
-          args: . --sarif --output ${{ github.event.repository.pushed_at}}.sarif || true
+          args: . --sarif --output ${{ steps.date.outputs.DATE }}.sarif || true
           
       - name: Upload mobsfscan report
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: ${{ github.event.repository.pushed_at}}.sarif
+          sarif_file: ${{ steps.date.outputs.DATE }}.sarif
           
 #       - name: Run Python Script
 #         run: python ./verifyResults.py
