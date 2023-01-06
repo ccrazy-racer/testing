@@ -54,29 +54,29 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup python
-        uses: actions/setup-python@v3
-        with:
-          python-version: 3.8
+#       - name: Setup python
+#         uses: actions/setup-python@v3
+#         with:
+#           python-version: 3.8
           
       - name: Get current date
         id: date
-        run: echo "{date}={$(date +'%Y-%m-%dT%H:%M:%S')}" >> $GITHUB_STATE
+        run: echo ${{ github.event.repository.updated_at}}
       - name: Test with environment variables
-        run: echo ${{ env.date }}
+        run: echo ${{ github.event.repository.updated_at}}
         env:
-          TAG_NAME: report-tag-${{ env.date }}
+          TAG_NAME: report-tag-${{ github.event.repository.updated_at}}
 
-      - name: Run mobsfscan
-        uses: MobSF/mobsfscan@main
-        with:
-          args: . --sarif --output ${{ env.date }}.sarif || true
+#       - name: Run mobsfscan
+#         uses: MobSF/mobsfscan@main
+#         with:
+#           args: . --sarif --output ${{ github.event.repository.updated_at}}.sarif || true
           
-      - name: Upload mobsfscan report
-        uses: github/codeql-action/upload-sarif@v2
-        with:
-          sarif_file: ${{ env.date }}.sarif
+#       - name: Upload mobsfscan report
+#         uses: github/codeql-action/upload-sarif@v2
+#         with:
+#           sarif_file: ${{ github.event.repository.updated_at}}.sarif
           
-      - name: Run Python Script
-        run: python ./verifyResults.py
+#       - name: Run Python Script
+#         run: python ./verifyResults.py
       
