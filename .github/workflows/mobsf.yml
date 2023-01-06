@@ -54,10 +54,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-#       - name: Setup python
-#         uses: actions/setup-python@v3
-#         with:
-#           python-version: 3.8
+      - name: Setup python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.8
           
       - name: Get current date
         id: date
@@ -67,15 +67,15 @@ jobs:
         env:
           TAG_NAME: report-tag-${{ github.event.repository.updated_at}}
 
-#       - name: Run mobsfscan
-#         uses: MobSF/mobsfscan@main
-#         with:
-#           args: . --sarif --output ${{ github.event.repository.updated_at}}.sarif || true
+      - name: Run mobsfscan
+        uses: MobSF/mobsfscan@main
+        with:
+          args: . --sarif --output ${{ github.event.repository.updated_at}}.sarif || true
           
-#       - name: Upload mobsfscan report
-#         uses: github/codeql-action/upload-sarif@v2
-#         with:
-#           sarif_file: ${{ github.event.repository.updated_at}}.sarif
+      - name: Upload mobsfscan report
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: ${{ github.event.repository.updated_at}}.sarif
           
 #       - name: Run Python Script
 #         run: python ./verifyResults.py
