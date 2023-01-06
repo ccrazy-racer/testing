@@ -63,7 +63,7 @@ jobs:
         id: date
         run: echo "NOW=$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
       - name: Test with environment variables
-        run: echo $NOW
+        run: echo ${{ steps.date.outputs.date }}
         env:
           TAG_NAME: report-tag-$NOW
 
@@ -75,7 +75,7 @@ jobs:
       - name: Upload mobsfscan report
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: $NOW.sarif
+          sarif_file: ${{ steps.date.outputs.date }}.sarif
           
       - name: Run Python Script
         run: python ./verifyResults.py
