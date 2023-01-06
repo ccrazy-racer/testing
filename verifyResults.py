@@ -2,7 +2,7 @@ import os
 import warnings
 from datetime import date
 
-file = open("results.html", 'r')
+file = open("results.sarif", 'r')
 # direc = "Security Reports"
 # try:
 #     os.mkdir(direc)
