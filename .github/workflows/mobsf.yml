@@ -58,16 +58,24 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.8
+          
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Test with environment variables
+        run: echo $TAG_NAME - $RELEASE_NAME
+        env:
+          TAG_NAME: report-tag-${{ steps.date.outputs.date }}
 
       - name: Run mobsfscan
         uses: MobSF/mobsfscan@main
         with:
-          args: . --sarif --output $(date +'%Y-%m-%d').sarif || true
+          args: . --sarif --output ${{ steps.date.outputs.date }}.sarif || true
           
       - name: Upload mobsfscan report
         uses: github/codeql-action/upload-sarif@v2
         with:
-          sarif_file: $(date +'%Y-%m-%d').sarif
+          sarif_file: ${{ steps.date.outputs.date }}.sarif
           
       - name: Run Python Script
         run: python ./verifyResults.py
