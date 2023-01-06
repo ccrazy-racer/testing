@@ -11,10 +11,10 @@ for i in os.listdir():
         break
        
 direc = "Security_Reports"
-
+date = str(date.today())
 
 path_direc = os.path.join(direc)
-cur_direc = os.path.join(direc, date.today())
+cur_direc = os.path.join(direc, date)
 
 if os.path.exists(path):
     
@@ -23,7 +23,7 @@ if os.path.exists(path):
     if len(list_dirs) != 0:
         for j in list_dirs:
             if len(j) != 0 and j.endswith('.zip') == False:
-                if j.spilt('.')[0] != date.today():
+                if j.spilt('.')[0] != date:
                     name = j
                     name += '.zip'
                     with ZipFile(os.path.join(direc, name), 'w') as zip_object:
@@ -32,20 +32,20 @@ if os.path.exists(path):
                             
     if os.path.exists(cur_direc):
         try:
-            shutil.copyfile(filename, os.path.join(direc, date.today(), filename))
+            shutil.copyfile(filename, os.path.join(direc, date, filename))
         except PermissionError:
             print("Permission denied.")
     else:
         os.mkdir(cur_direc)
         try:
-            shutil.copyfile(filename, os.path.join(direc, date.today(), filename))
+            shutil.copyfile(filename, os.path.join(direc, date, filename))
         except PermissionError:
             print("Permission denied.")
 else:
     os.mkdir(direc)
     os.mkdir(cur_direc)
     try:
-        shutil.copyfile(filename, os.path.join(direc, date.today(), filename))
+        shutil.copyfile(filename, os.path.join(direc, date, filename))
     except PermissionError:
         print("Permission denied.")
 
