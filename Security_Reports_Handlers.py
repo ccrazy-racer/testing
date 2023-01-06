@@ -44,10 +44,10 @@ if os.path.exists(path):
 else:
     os.mkdir(direc)
     os.mkdir(cur_direc)
-        try:
-            shutil.copyfile(filename, os.path.join(direc, date.today(), filename))
-        except PermissionError:
-            print("Permission denied.")
+    try:
+        shutil.copyfile(filename, os.path.join(direc, date.today(), filename))
+    except PermissionError:
+        print("Permission denied.")
 
 for i in file:
     if i.lstrip().startswith('"id":'):
