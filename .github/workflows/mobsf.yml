@@ -90,8 +90,8 @@ jobs:
       - name: Push changes # push the 'Security Report' folder to your repo
         uses: ad-m/github-push-action@master
         with:
-#           branch: B77 #ignore if your branch is master github_token 
-          repo-token: ${{ secrets.GITHUBTOKEN }}
+#           branch: B77 #ignore if your branch is master
+          github_token: ${{ secrets.SUPER_SECERT }}
           force: true
           
       
