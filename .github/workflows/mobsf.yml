@@ -61,7 +61,7 @@ jobs:
           
       - name: Get current date
         id: date
-        run: echo -n "$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+        run: echo -n "$(date +'%Y-%m-%d')<<EOF" >> $GITHUB_OUTPUT
       - name: Test with environment variables
         run: echo $TAG_NAME
         env:
