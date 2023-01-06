@@ -2,7 +2,10 @@ import os
 import warnings
 from datetime import date
 
-file = open("results.sarif", 'r')
+for i in os.listdir():
+    if i.endswith('.sarif'):
+        file = open(i, 'r')
+        break
 # direc = "Security Reports"
 # try:
 #     os.mkdir(direc)
