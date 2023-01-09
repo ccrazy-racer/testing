@@ -23,7 +23,7 @@ if os.path.exists(path_direc):
     if len(list_dirs) != 0:
         for j in list_dirs:
             if len(j) != 0 and j.endswith('.zip') == False:
-                if j.spilt('.')[0] != date:
+                if j.split('.')[0] != date:
                     name = j
                     name += '.zip'
                     with ZipFile(os.path.join(direc, name), 'w') as zip_object:
