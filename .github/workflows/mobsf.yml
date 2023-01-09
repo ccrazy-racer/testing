@@ -46,15 +46,13 @@ jobs:
   mobile-security:
 #     needs: build
     permissions:
-      contents: read # for actions/checkout to fetch code
+      contents: write # for actions/checkout to fetch code
       security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
-      actions: write # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          persist-credentials: true
 
       - name: Setup python
         uses: actions/setup-python@v3
@@ -94,7 +92,7 @@ jobs:
 #         uses: ad-m/github-push-action@master
 #         with:
 # #           branch: B77 #ignore if your branch is master
-#           github_token: ${{ secrets.SUPER_SECERT }}
+#           github_token: ${{ secrets.GITHUB_TOKEN }}
 #           force: true
           
       
