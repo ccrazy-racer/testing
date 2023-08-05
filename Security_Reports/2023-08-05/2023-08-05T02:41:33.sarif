@@ -17,6 +17,39 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06i-Testing-Code-Quality-and-Build-Settings.md#finding-debugging-code-and-verbose-error-logging-mstg-code-4"
             },
             {
+              "id": "ios_detect_reversing",
+              "name": "IosDetectReversing",
+              "properties": {
+                "tags": [
+                  "security",
+                  "external/cwe/cwe-919"
+                ]
+              },
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+            },
+            {
+              "id": "ios_jailbreak_detect",
+              "name": "IosJailbreakDetect",
+              "properties": {
+                "tags": [
+                  "security",
+                  "external/cwe/cwe-919"
+                ]
+              },
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+            },
+            {
+              "id": "ios_keyboard_cache",
+              "name": "IosKeyboardCache",
+              "properties": {
+                "tags": [
+                  "security",
+                  "external/cwe/cwe-919"
+                ]
+              },
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
+            },
+            {
               "id": "ios_custom_keyboard_disabled",
               "name": "IosCustomKeyboardDisabled",
               "properties": {
@@ -37,39 +70,6 @@
                 ]
               },
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
-            },
-            {
-              "id": "ios_keyboard_cache",
-              "name": "IosKeyboardCache",
-              "properties": {
-                "tags": [
-                  "security",
-                  "external/cwe/cwe-919"
-                ]
-              },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
-            },
-            {
-              "id": "ios_jailbreak_detect",
-              "name": "IosJailbreakDetect",
-              "properties": {
-                "tags": [
-                  "security",
-                  "external/cwe/cwe-919"
-                ]
-              },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
-            },
-            {
-              "id": "ios_detect_reversing",
-              "name": "IosDetectReversing",
-              "properties": {
-                "tags": [
-                  "security",
-                  "external/cwe/cwe-919"
-                ]
-              },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
             }
           ],
           "version": "0.2.0",
@@ -80,7 +80,7 @@
       "invocations": [
         {
           "executionSuccessful": true,
-          "endTimeUtc": "2023-07-29T02:41:59Z"
+          "endTimeUtc": "2023-08-05T02:42:01Z"
         }
       ],
       "results": [
@@ -118,7 +118,7 @@
         },
         {
           "message": {
-            "text": "This app does not have custom keyboards disabled."
+            "text": "This app does not have Reverse engineering detection capabilities."
           },
           "level": "note",
           "locations": [
@@ -140,17 +140,17 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M1: Improper Platform Usage",
-            "masvs": "MSTG-PLATFORM-11",
+            "owasp-mobile": "M9: Reverse Engineering",
+            "masvs": "MSTG-RESILIENCE-4",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
           },
-          "ruleId": "ios_custom_keyboard_disabled",
+          "ruleId": "ios_detect_reversing",
           "ruleIndex": 1
         },
         {
           "message": {
-            "text": "This app does not have Certificate Pinning implemented in code."
+            "text": "This app does not have Jailbreak detection capabilities."
           },
           "level": "note",
           "locations": [
@@ -172,12 +172,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M3: Insecure Communication",
-            "masvs": "MSTG-NETWORK-4",
-            "cwe": "CWE-295: Improper Certificate Validation",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
+            "owasp-mobile": "M8: Code Tampering",
+            "masvs": "MSTG-RESILIENCE-1",
+            "cwe": "CWE-919: Weaknesses in Mobile Applications",
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
           },
-          "ruleId": "ios_cert_pinning",
+          "ruleId": "ios_jailbreak_detect",
           "ruleIndex": 2
         },
         {
@@ -214,7 +214,7 @@
         },
         {
           "message": {
-            "text": "This app does not have Jailbreak detection capabilities."
+            "text": "This app does not have custom keyboards disabled."
           },
           "level": "note",
           "locations": [
@@ -236,17 +236,17 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M8: Code Tampering",
-            "masvs": "MSTG-RESILIENCE-1",
+            "owasp-mobile": "M1: Improper Platform Usage",
+            "masvs": "MSTG-PLATFORM-11",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
           },
-          "ruleId": "ios_jailbreak_detect",
+          "ruleId": "ios_custom_keyboard_disabled",
           "ruleIndex": 4
         },
         {
           "message": {
-            "text": "This app does not have Reverse engineering detection capabilities."
+            "text": "This app does not have Certificate Pinning implemented in code."
           },
           "level": "note",
           "locations": [
@@ -268,12 +268,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M9: Reverse Engineering",
-            "masvs": "MSTG-RESILIENCE-4",
-            "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+            "owasp-mobile": "M3: Insecure Communication",
+            "masvs": "MSTG-NETWORK-4",
+            "cwe": "CWE-295: Improper Certificate Validation",
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
           },
-          "ruleId": "ios_detect_reversing",
+          "ruleId": "ios_cert_pinning",
           "ruleIndex": 5
         }
       ]
