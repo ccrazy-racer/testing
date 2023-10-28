@@ -28,17 +28,6 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
             },
             {
-              "id": "ios_keyboard_cache",
-              "name": "IosKeyboardCache",
-              "properties": {
-                "tags": [
-                  "security",
-                  "external/cwe/cwe-919"
-                ]
-              },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
-            },
-            {
               "id": "ios_cert_pinning",
               "name": "IosCertPinning",
               "properties": {
@@ -48,6 +37,17 @@
                 ]
               },
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
+            },
+            {
+              "id": "ios_keyboard_cache",
+              "name": "IosKeyboardCache",
+              "properties": {
+                "tags": [
+                  "security",
+                  "external/cwe/cwe-919"
+                ]
+              },
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
             },
             {
               "id": "ios_custom_keyboard_disabled",
@@ -80,7 +80,7 @@
       "invocations": [
         {
           "executionSuccessful": true,
-          "endTimeUtc": "2023-10-21T02:42:06Z"
+          "endTimeUtc": "2023-10-28T02:42:05Z"
         }
       ],
       "results": [
@@ -150,38 +150,6 @@
         },
         {
           "message": {
-            "text": "This app does not disable Keyboard cache. It must be disabled for all sensitive data inputs."
-          },
-          "level": "note",
-          "locations": [
-            {
-              "physicalLocation": {
-                "region": {
-                  "snippet": {
-                    "text": "Missing Best Practice"
-                  },
-                  "endColumn": 1,
-                  "endLine": 1,
-                  "startColumn": 1,
-                  "startLine": 1
-                },
-                "artifactLocation": {
-                  "uri": "."
-                }
-              }
-            }
-          ],
-          "properties": {
-            "owasp-mobile": "M2: Insecure Data Storage",
-            "masvs": "MSTG-STORAGE-5",
-            "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
-          },
-          "ruleId": "ios_keyboard_cache",
-          "ruleIndex": 2
-        },
-        {
-          "message": {
             "text": "This app does not have Certificate Pinning implemented in code."
           },
           "level": "note",
@@ -210,6 +178,38 @@
             "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
           },
           "ruleId": "ios_cert_pinning",
+          "ruleIndex": 2
+        },
+        {
+          "message": {
+            "text": "This app does not disable Keyboard cache. It must be disabled for all sensitive data inputs."
+          },
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "Missing Best Practice"
+                  },
+                  "endColumn": 1,
+                  "endLine": 1,
+                  "startColumn": 1,
+                  "startLine": 1
+                },
+                "artifactLocation": {
+                  "uri": "."
+                }
+              }
+            }
+          ],
+          "properties": {
+            "owasp-mobile": "M2: Insecure Data Storage",
+            "masvs": "MSTG-STORAGE-5",
+            "cwe": "CWE-919: Weaknesses in Mobile Applications",
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
+          },
+          "ruleId": "ios_keyboard_cache",
           "ruleIndex": 3
         },
         {
