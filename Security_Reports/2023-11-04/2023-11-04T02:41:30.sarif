@@ -17,15 +17,15 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06i-Testing-Code-Quality-and-Build-Settings.md#finding-debugging-code-and-verbose-error-logging-mstg-code-4"
             },
             {
-              "id": "ios_jailbreak_detect",
-              "name": "IosJailbreakDetect",
+              "id": "ios_detect_reversing",
+              "name": "IosDetectReversing",
               "properties": {
                 "tags": [
                   "security",
                   "external/cwe/cwe-919"
                 ]
               },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
             },
             {
               "id": "ios_cert_pinning",
@@ -39,15 +39,15 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
             },
             {
-              "id": "ios_keyboard_cache",
-              "name": "IosKeyboardCache",
+              "id": "ios_jailbreak_detect",
+              "name": "IosJailbreakDetect",
               "properties": {
                 "tags": [
                   "security",
                   "external/cwe/cwe-919"
                 ]
               },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
             },
             {
               "id": "ios_custom_keyboard_disabled",
@@ -61,15 +61,15 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
             },
             {
-              "id": "ios_detect_reversing",
-              "name": "IosDetectReversing",
+              "id": "ios_keyboard_cache",
+              "name": "IosKeyboardCache",
               "properties": {
                 "tags": [
                   "security",
                   "external/cwe/cwe-919"
                 ]
               },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
             }
           ],
           "version": "0.3.4",
@@ -80,7 +80,7 @@
       "invocations": [
         {
           "executionSuccessful": true,
-          "endTimeUtc": "2023-10-28T02:42:05Z"
+          "endTimeUtc": "2023-11-04T02:41:50Z"
         }
       ],
       "results": [
@@ -118,7 +118,7 @@
         },
         {
           "message": {
-            "text": "This app does not have Jailbreak detection capabilities."
+            "text": "This app does not have Reverse engineering detection capabilities."
           },
           "level": "note",
           "locations": [
@@ -140,12 +140,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M8: Code Tampering",
-            "masvs": "MSTG-RESILIENCE-1",
+            "owasp-mobile": "M9: Reverse Engineering",
+            "masvs": "MSTG-RESILIENCE-4",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
           },
-          "ruleId": "ios_jailbreak_detect",
+          "ruleId": "ios_detect_reversing",
           "ruleIndex": 1
         },
         {
@@ -182,7 +182,7 @@
         },
         {
           "message": {
-            "text": "This app does not disable Keyboard cache. It must be disabled for all sensitive data inputs."
+            "text": "This app does not have Jailbreak detection capabilities."
           },
           "level": "note",
           "locations": [
@@ -204,12 +204,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M2: Insecure Data Storage",
-            "masvs": "MSTG-STORAGE-5",
+            "owasp-mobile": "M8: Code Tampering",
+            "masvs": "MSTG-RESILIENCE-1",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
           },
-          "ruleId": "ios_keyboard_cache",
+          "ruleId": "ios_jailbreak_detect",
           "ruleIndex": 3
         },
         {
@@ -246,7 +246,7 @@
         },
         {
           "message": {
-            "text": "This app does not have Reverse engineering detection capabilities."
+            "text": "This app does not disable Keyboard cache. It must be disabled for all sensitive data inputs."
           },
           "level": "note",
           "locations": [
@@ -268,12 +268,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M9: Reverse Engineering",
-            "masvs": "MSTG-RESILIENCE-4",
+            "owasp-mobile": "M2: Insecure Data Storage",
+            "masvs": "MSTG-STORAGE-5",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
           },
-          "ruleId": "ios_detect_reversing",
+          "ruleId": "ios_keyboard_cache",
           "ruleIndex": 5
         }
       ]
