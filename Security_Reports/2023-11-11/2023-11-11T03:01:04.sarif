@@ -28,17 +28,6 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
             },
             {
-              "id": "ios_cert_pinning",
-              "name": "IosCertPinning",
-              "properties": {
-                "tags": [
-                  "security",
-                  "external/cwe/cwe-295"
-                ]
-              },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
-            },
-            {
               "id": "ios_jailbreak_detect",
               "name": "IosJailbreakDetect",
               "properties": {
@@ -48,6 +37,17 @@
                 ]
               },
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+            },
+            {
+              "id": "ios_cert_pinning",
+              "name": "IosCertPinning",
+              "properties": {
+                "tags": [
+                  "security",
+                  "external/cwe/cwe-295"
+                ]
+              },
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
             },
             {
               "id": "ios_custom_keyboard_disabled",
@@ -80,7 +80,7 @@
       "invocations": [
         {
           "executionSuccessful": true,
-          "endTimeUtc": "2023-11-04T02:41:50Z"
+          "endTimeUtc": "2023-11-11T03:01:47Z"
         }
       ],
       "results": [
@@ -150,38 +150,6 @@
         },
         {
           "message": {
-            "text": "This app does not have Certificate Pinning implemented in code."
-          },
-          "level": "note",
-          "locations": [
-            {
-              "physicalLocation": {
-                "region": {
-                  "snippet": {
-                    "text": "Missing Best Practice"
-                  },
-                  "endColumn": 1,
-                  "endLine": 1,
-                  "startColumn": 1,
-                  "startLine": 1
-                },
-                "artifactLocation": {
-                  "uri": "."
-                }
-              }
-            }
-          ],
-          "properties": {
-            "owasp-mobile": "M3: Insecure Communication",
-            "masvs": "MSTG-NETWORK-4",
-            "cwe": "CWE-295: Improper Certificate Validation",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
-          },
-          "ruleId": "ios_cert_pinning",
-          "ruleIndex": 2
-        },
-        {
-          "message": {
             "text": "This app does not have Jailbreak detection capabilities."
           },
           "level": "note",
@@ -210,6 +178,38 @@
             "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
           },
           "ruleId": "ios_jailbreak_detect",
+          "ruleIndex": 2
+        },
+        {
+          "message": {
+            "text": "This app does not have Certificate Pinning implemented in code."
+          },
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "Missing Best Practice"
+                  },
+                  "endColumn": 1,
+                  "endLine": 1,
+                  "startColumn": 1,
+                  "startLine": 1
+                },
+                "artifactLocation": {
+                  "uri": "."
+                }
+              }
+            }
+          ],
+          "properties": {
+            "owasp-mobile": "M3: Insecure Communication",
+            "masvs": "MSTG-NETWORK-4",
+            "cwe": "CWE-295: Improper Certificate Validation",
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
+          },
+          "ruleId": "ios_cert_pinning",
           "ruleIndex": 3
         },
         {
