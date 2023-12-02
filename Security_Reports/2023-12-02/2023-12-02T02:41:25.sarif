@@ -28,15 +28,15 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x05g-Testing-Network-Communication.md#testing-custom-certificate-stores-and-certificate-pinning-mstg-network-4"
             },
             {
-              "id": "ios_detect_reversing",
-              "name": "IosDetectReversing",
+              "id": "ios_jailbreak_detect",
+              "name": "IosJailbreakDetect",
               "properties": {
                 "tags": [
                   "security",
                   "external/cwe/cwe-919"
                 ]
               },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
             },
             {
               "id": "ios_custom_keyboard_disabled",
@@ -50,15 +50,15 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
             },
             {
-              "id": "ios_jailbreak_detect",
-              "name": "IosJailbreakDetect",
+              "id": "ios_detect_reversing",
+              "name": "IosDetectReversing",
               "properties": {
                 "tags": [
                   "security",
                   "external/cwe/cwe-919"
                 ]
               },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
             },
             {
               "id": "ios_keyboard_cache",
@@ -80,7 +80,7 @@
       "invocations": [
         {
           "executionSuccessful": true,
-          "endTimeUtc": "2023-11-25T02:41:49Z"
+          "endTimeUtc": "2023-12-02T02:41:45Z"
         }
       ],
       "results": [
@@ -150,7 +150,7 @@
         },
         {
           "message": {
-            "text": "This app does not have Reverse engineering detection capabilities."
+            "text": "This app does not have Jailbreak detection capabilities."
           },
           "level": "note",
           "locations": [
@@ -172,12 +172,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M9: Reverse Engineering",
-            "masvs": "MSTG-RESILIENCE-4",
+            "owasp-mobile": "M8: Code Tampering",
+            "masvs": "MSTG-RESILIENCE-1",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
           },
-          "ruleId": "ios_detect_reversing",
+          "ruleId": "ios_jailbreak_detect",
           "ruleIndex": 2
         },
         {
@@ -214,7 +214,7 @@
         },
         {
           "message": {
-            "text": "This app does not have Jailbreak detection capabilities."
+            "text": "This app does not have Reverse engineering detection capabilities."
           },
           "level": "note",
           "locations": [
@@ -236,12 +236,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M8: Code Tampering",
-            "masvs": "MSTG-RESILIENCE-1",
+            "owasp-mobile": "M9: Reverse Engineering",
+            "masvs": "MSTG-RESILIENCE-4",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
           },
-          "ruleId": "ios_jailbreak_detect",
+          "ruleId": "ios_detect_reversing",
           "ruleIndex": 4
         },
         {
