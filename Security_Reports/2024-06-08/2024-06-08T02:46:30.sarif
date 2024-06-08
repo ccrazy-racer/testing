@@ -17,6 +17,17 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06i-Testing-Code-Quality-and-Build-Settings.md#finding-debugging-code-and-verbose-error-logging-mstg-code-4"
             },
             {
+              "id": "ios_jailbreak_detect",
+              "name": "IosJailbreakDetect",
+              "properties": {
+                "tags": [
+                  "security",
+                  "external/cwe/cwe-919"
+                ]
+              },
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+            },
+            {
               "id": "ios_detect_reversing",
               "name": "IosDetectReversing",
               "properties": {
@@ -37,17 +48,6 @@
                 ]
               },
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
-            },
-            {
-              "id": "ios_jailbreak_detect",
-              "name": "IosJailbreakDetect",
-              "properties": {
-                "tags": [
-                  "security",
-                  "external/cwe/cwe-919"
-                ]
-              },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
             },
             {
               "id": "ios_cert_pinning",
@@ -80,7 +80,7 @@
       "invocations": [
         {
           "executionSuccessful": true,
-          "endTimeUtc": "2024-06-01T02:50:40Z"
+          "endTimeUtc": "2024-06-08T02:46:47Z"
         }
       ],
       "results": [
@@ -118,6 +118,38 @@
         },
         {
           "message": {
+            "text": "This app does not have Jailbreak detection capabilities."
+          },
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "Missing Best Practice"
+                  },
+                  "endColumn": 1,
+                  "endLine": 1,
+                  "startColumn": 1,
+                  "startLine": 1
+                },
+                "artifactLocation": {
+                  "uri": "."
+                }
+              }
+            }
+          ],
+          "properties": {
+            "owasp-mobile": "M8: Code Tampering",
+            "masvs": "MSTG-RESILIENCE-1",
+            "cwe": "CWE-919: Weaknesses in Mobile Applications",
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
+          },
+          "ruleId": "ios_jailbreak_detect",
+          "ruleIndex": 1
+        },
+        {
+          "message": {
             "text": "This app does not have Reverse engineering detection capabilities."
           },
           "level": "note",
@@ -146,7 +178,7 @@
             "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
           },
           "ruleId": "ios_detect_reversing",
-          "ruleIndex": 1
+          "ruleIndex": 2
         },
         {
           "message": {
@@ -178,38 +210,6 @@
             "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
           },
           "ruleId": "ios_keyboard_cache",
-          "ruleIndex": 2
-        },
-        {
-          "message": {
-            "text": "This app does not have Jailbreak detection capabilities."
-          },
-          "level": "note",
-          "locations": [
-            {
-              "physicalLocation": {
-                "region": {
-                  "snippet": {
-                    "text": "Missing Best Practice"
-                  },
-                  "endColumn": 1,
-                  "endLine": 1,
-                  "startColumn": 1,
-                  "startLine": 1
-                },
-                "artifactLocation": {
-                  "uri": "."
-                }
-              }
-            }
-          ],
-          "properties": {
-            "owasp-mobile": "M8: Code Tampering",
-            "masvs": "MSTG-RESILIENCE-1",
-            "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
-          },
-          "ruleId": "ios_jailbreak_detect",
           "ruleIndex": 3
         },
         {
