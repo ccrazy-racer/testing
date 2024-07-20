@@ -39,15 +39,15 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06d-Testing-Data-Storage.md#finding-sensitive-data-in-the-keyboard-cache-mstg-storage-5"
             },
             {
-              "id": "ios_custom_keyboard_disabled",
-              "name": "IosCustomKeyboardDisabled",
+              "id": "ios_detect_reversing",
+              "name": "IosDetectReversing",
               "properties": {
                 "tags": [
                   "security",
                   "external/cwe/cwe-919"
                 ]
               },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
             },
             {
               "id": "ios_jailbreak_detect",
@@ -61,15 +61,15 @@
               "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#jailbreak-detection-mstg-resilience-1"
             },
             {
-              "id": "ios_detect_reversing",
-              "name": "IosDetectReversing",
+              "id": "ios_custom_keyboard_disabled",
+              "name": "IosCustomKeyboardDisabled",
               "properties": {
                 "tags": [
                   "security",
                   "external/cwe/cwe-919"
                 ]
               },
-              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+              "helpUri": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
             }
           ],
           "version": "0.3.9",
@@ -80,7 +80,7 @@
       "invocations": [
         {
           "executionSuccessful": true,
-          "endTimeUtc": "2024-07-13T02:48:25Z"
+          "endTimeUtc": "2024-07-20T02:47:39Z"
         }
       ],
       "results": [
@@ -182,7 +182,7 @@
         },
         {
           "message": {
-            "text": "This app does not have custom keyboards disabled."
+            "text": "This app does not have Reverse engineering detection capabilities."
           },
           "level": "note",
           "locations": [
@@ -204,12 +204,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M1: Improper Platform Usage",
-            "masvs": "MSTG-PLATFORM-11",
+            "owasp-mobile": "M9: Reverse Engineering",
+            "masvs": "MSTG-RESILIENCE-4",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
           },
-          "ruleId": "ios_custom_keyboard_disabled",
+          "ruleId": "ios_detect_reversing",
           "ruleIndex": 3
         },
         {
@@ -246,7 +246,7 @@
         },
         {
           "message": {
-            "text": "This app does not have Reverse engineering detection capabilities."
+            "text": "This app does not have custom keyboards disabled."
           },
           "level": "note",
           "locations": [
@@ -268,12 +268,12 @@
             }
           ],
           "properties": {
-            "owasp-mobile": "M9: Reverse Engineering",
-            "masvs": "MSTG-RESILIENCE-4",
+            "owasp-mobile": "M1: Improper Platform Usage",
+            "masvs": "MSTG-PLATFORM-11",
             "cwe": "CWE-919: Weaknesses in Mobile Applications",
-            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06j-Testing-Resiliency-Against-Reverse-Engineering.md#ios-anti-reversing-defenses"
+            "reference": "https://github.com/MobSF/owasp-mstg/blob/master/Document/0x06h-Testing-Platform-Interaction.md#app-extensions"
           },
-          "ruleId": "ios_detect_reversing",
+          "ruleId": "ios_custom_keyboard_disabled",
           "ruleIndex": 5
         }
       ]
